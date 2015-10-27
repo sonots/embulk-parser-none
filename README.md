@@ -21,18 +21,19 @@ $ embulk gem install embulk-parser-none
 
 ```yaml
 in:
-  type: any file input plugin type
+  type: file
+  path_prefix: example.txt
   parser:
     type: parser
     format: none
     message_key: message
 ```
 
-Assume inputs are as following:
+Assume the input file (example.txt) is as following:
 
 ```
-foo,bar,baz
-foo,bar,baz
+foo bar baz
+foo bar baz
 ```
 
 then this plugin treats as:
@@ -41,14 +42,23 @@ then this plugin treats as:
 +----------------+
 | message:string |
 +----------------+
-| foo,bar,baz    |
-| foo,bar,baz    |
+| foo bar baz    |
+| foo bar baz    |
 +----------------+
 ```
 
-## See also
+To resover a file, you may use csv formatter as:
 
-You may use [embulk-formatter-single_value](https://github.com/sonots/embulk-formatter-single_value) to recover outputs
+```
+out:
+  type: file
+  path_prefix: example.txt
+  sequence_format: ""
+  file_ext: .out
+  formatter:
+    type: csv
+    quote_policy: NONE
+```
 
 ## ChangeLOG
 

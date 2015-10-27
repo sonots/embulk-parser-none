@@ -5,4 +5,10 @@ in:
     type: none
     message_key: message
 out:
-  type: stdout
+  type: file
+  path_prefix: example.txt
+  sequence_format: ""
+  file_ext: .out
+  formatter:
+    type: csv
+    quote_policy: NONE
