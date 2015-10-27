@@ -1,0 +1,8 @@
+in:
+  type: file
+  path_prefix: example.txt
+  parser:
+    type: none
+    message_key: message
+out:
+  type: stdout
