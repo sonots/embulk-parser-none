@@ -37,12 +37,14 @@ foo,bar,baz
 
 then this plugin treats as:
 
+```
 +----------------+
 | message:string |
 +----------------+
 | foo,bar,baz    |
 | foo,bar,baz    |
 +----------------+
+```
 
 ## See also
 
@@ -71,4 +73,4 @@ Release gem:
 
 ```
 $ ./gradlew gemPush
-`
+```
