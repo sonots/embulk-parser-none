@@ -47,7 +47,7 @@ then this plugin treats as:
 +----------------+
 ```
 
-To resover a file, you may use csv formatter as:
+To recover a file, you may use csv formatter as:
 
 ```
 out:
