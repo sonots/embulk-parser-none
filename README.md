@@ -24,8 +24,7 @@ in:
   type: file
   path_prefix: example.txt
   parser:
-    type: parser
-    format: none
+    type: none
     message_key: message
 ```
 
