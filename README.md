@@ -56,7 +56,9 @@ out:
   file_ext: .out
   formatter:
     type: csv
+    delimiter: 0
     quote_policy: NONE
+    header_line: false
 ```
 
 ## ChangeLOG
