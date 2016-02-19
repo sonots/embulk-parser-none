@@ -46,7 +46,19 @@ then this plugin treats as:
 +----------------+
 ```
 
-To recover a file, you may use csv formatter as:
+To recover a file, you may use [embulk-formatter-single_value](https://github.com/sonots/embulk-formatter-single_value) as:
+
+```
+out:
+  type: file
+  path_prefix: example.txt
+  sequence_format: ""
+  file_ext: .out
+  formatter:
+    type: single_value
+```
+
+or csv formatter as:
 
 ```
 out:
