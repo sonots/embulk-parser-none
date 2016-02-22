@@ -3,12 +3,11 @@ in:
   path_prefix: example.txt
   parser:
     type: none
-    message_key: message
+    column_name: payload
 out:
   type: file
   path_prefix: example.txt
   sequence_format: ""
   file_ext: .out
   formatter:
-    type: csv
-    quote_policy: NONE
+    type: single_value

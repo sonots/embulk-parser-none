@@ -15,7 +15,7 @@ $ embulk gem install embulk-parser-none
 
 ## Configuration
 
-- **message_key**: A column name which this plugin outputs (string, default: "message")
+- **column_name**: A column name which this plugin outputs (string, default: "payload")
 
 ## Example
 
@@ -25,7 +25,7 @@ in:
   path_prefix: example.txt
   parser:
     type: none
-    message_key: message
+    column_name: payload
 ```
 
 Assume the input file (example.txt) is as following:
@@ -39,7 +39,7 @@ then this plugin treats as:
 
 ```
 +----------------+
-| message:string |
+| payload:string |
 +----------------+
 | foo bar baz    |
 | foo bar baz    |
@@ -82,6 +82,7 @@ out:
 Run example:
 
 ```
+$ embulk gem install embulk-formatter-single_value
 $ ./gradlew classpath
 $ embulk run -I lib example.yml
 ```

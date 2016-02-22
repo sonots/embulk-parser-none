@@ -33,9 +33,9 @@ public class NoneParserPlugin
     public interface PluginTask
             extends Task, LineDecoder.DecoderTask //, TimestampParser.Task
     {
-        @Config("message_key")
-        @ConfigDefault("\"message\"")
-        public String getMessageKey();
+        @Config("column_name")
+        @ConfigDefault("\"payload\"")
+        public String getColumnName();
     }
 
     @Override
@@ -43,9 +43,9 @@ public class NoneParserPlugin
     {
         PluginTask task = config.loadConfig(PluginTask.class);
         ArrayList<ColumnConfig> columns = new ArrayList<ColumnConfig>();
-        final String messageKey = task.getMessageKey();
+        final String columnName = task.getColumnName();
 
-        columns.add(new ColumnConfig(messageKey, STRING ,config));
+        columns.add(new ColumnConfig(columnName, STRING ,config));
 
         Schema schema = new SchemaConfig(columns).toSchema();
         control.run(task.dump(), schema);
@@ -59,7 +59,7 @@ public class NoneParserPlugin
         LineDecoder lineDecoder = new LineDecoder(input,task);
         PageBuilder pageBuilder = new PageBuilder(Exec.getBufferAllocator(), schema, output);
         String line = null;
-        final String messageKey = task.getMessageKey();
+        final String columnName = task.getColumnName();
 
         while( input.nextFile() ){
             while(true){
