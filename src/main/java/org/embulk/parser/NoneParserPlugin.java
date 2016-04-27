@@ -15,17 +15,10 @@ import org.embulk.spi.SchemaConfig;
 import org.embulk.spi.Exec;
 import org.embulk.spi.PageBuilder;
 import org.embulk.spi.util.LineDecoder;
-//import org.embulk.spi.type.TimestampType;
-//import org.embulk.spi.time.TimestampParser;
-//import org.embulk.spi.time.TimestampParseException;
 import org.embulk.spi.ColumnConfig;
 import java.util.ArrayList;
 
-//import static org.embulk.spi.type.Types.BOOLEAN;
-//import static org.embulk.spi.type.Types.DOUBLE;
-//import static org.embulk.spi.type.Types.LONG;
 import static org.embulk.spi.type.Types.STRING;
-//import static org.embulk.spi.type.Types.TIMESTAMP;
 
 public class NoneParserPlugin
         implements ParserPlugin
