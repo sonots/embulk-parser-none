@@ -48,16 +48,10 @@ public class NoneParserPlugin
         @ConfigDefault("\"utf-8\"")
         public Charset getCharset();
 
-        // From org.embulk.spi.util.LineDecoder.DecoderTask
-        @Config("newline")
-        @ConfigDefault("\"CRLF\"")
-        public Newline getNewline();
-
         // From org.embulk.spi.util.LineDecoder.DecoderTask.
         @Config("line_delimiter_recognized")
         @ConfigDefault("null")
         Optional<LineDelimiter> getLineDelimiterRecognized();
-
     }
 
     @Override
