@@ -16,8 +16,6 @@ $ embulk gem install embulk-parser-none
 ## Configuration
 
 - **column_name**: A column name which this plugin outputs (string, default: "payload")
-- **line_delimiter_recognized**: `CRLF`, `LF` or `CR`. If specified, only the character is recognized as line delimiter. Otherwise, all of them are recognized (enum, default: `null`)
-- **charset**: Character encoding eg. `ISO-8859-1`, `UTF-8` (string, default: `UTF-8`)
 
 ## Example
 
@@ -85,8 +83,8 @@ Run example:
 
 ```
 $ embulk gem install embulk-formatter-single_value
-$ ./gradlew gem
-$ embulk run -I build/gemContents/lib example.yml
+$ ./gradlew classpath
+$ embulk run -I lib example.yml
 ```
 
 Run test:
